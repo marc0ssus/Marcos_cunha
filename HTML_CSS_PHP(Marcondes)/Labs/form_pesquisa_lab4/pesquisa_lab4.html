@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa lab4</title>
+</head>
+<body>
+    <h1>Pesquisa:</h1>
+    <table>
+        <tr>
+            <td>
+                <form action="resultado_lab4.php" method="post">
+                <fieldset>
+                    <legend>Login</legend>
+                    <label for="login">Login</label>
+                    <input type="text" name="login" id="login">
+                </fieldset>
+                <fieldset>
+                    <legend>Senha</legend>
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" id="senha">
+                </fieldset>
+                <fieldset>
+                    <legend>Cor(es)</legend>
+                    <input type="color" name="cor">
+                    <input type="color" name="cor">
+                    <input type="color" name="cor">
+                </fieldset>
+                <fieldset>
+                    <legend>Marcas de Carros</legend>
+                    <label for="hyundai">Hyundai</label>
+                    <input type="checkbox" name="marca" id="hyundai">
+                    <br>
+                    <label for="mercedes">Mercedes</label>
+                    <input type="checkbox" name="marca" id="mercedes">
+                    <br>
+                    <label for="fiat">Fiat</label>
+                    <input type="checkbox" name="marca" id="fiat">
+                    <br>
+                    <label for="volkswagen">Volkswagen</label>
+                    <input type="checkbox" name="marca" id="volkswagen">
+                </fieldset>
+                <fieldset>
+                    <legend>Sexo</legend>
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" name="sex" id="masculino">
+                    <label for="feminino">Feminino</label>
+                    <input type="radio" name="sex" id="feminino">
+                </fieldset>
+                <fieldset>
+                    <legend>Cidade</legend>
+                    <label for="rio do sul">Rio do Sul</label>
+                    <input type="radio" name="cidade" id="rio do sul">
+                    <br>
+                    <label for="braço do trombudo">Braço do Trombudo</label>
+                    <input type="radio" name="cidade" id="braço do trombudo">
+                    <br>
+                    <label for="trombudo central">Trombudo Central</label>
+                    <input type="radio" name="cidade" id="trombudo central">
+                    <br>
+                    <label for="agronomica">Agronomica</label>
+                    <input type="radio" name="cidade" id="agronomica">
+                </fieldset>
+                <br><br>
+                <input type="reset" value="Limpar">
+                <br><br>
+                <input type="submit" value="Enviar">
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#menu {
+    background: gray;
+    display: table;
+    width: 100%;
+    
+}
+#menu ul {list-style: none;}
+#menu ul li {display: inline;}
+#menu ul li a {
+    font: 13px verdana, arial, tahoma, sans-serif;
+    color: rgb(138, 3, 3);
+    background: rgb(175, 175, 174);
+    text-decoration: none;
+    float: left;
+    padding: 5px 10px;
+    margin-left: 1px;
+
+}
+#menu ul li a:hover {
+    color: salmon;
+    background: #000;
+
+}

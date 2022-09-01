@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <script language="JavaScript" src="funcoes.js"></script>
+    <title>Jogo da Velha 1</title>
+</head>
+<body>
+    <h1>JOGO DA VELHA</h1>
+    <h3>em Java Script</h3>
+    <h2 id="jogador">Jogador: X</h2>
+    <table>
+        <tr id="l0"> <!-- Linha 0 -->
+            <td id="c00" onclick="jogar(this)"> <!-- coluna 0,0 -->
+                &nbsp;
+            </td>
+            <td id="c01" onclick="jogar(this)"> <!-- coluna 0,1 -->
+                &nbsp;
+            </td>
+            <td id="c02" onclick="jogar(this)"> <!-- coluna 0,2 -->
+                &nbsp;
+            </td>
+        </tr>
+        <tr id="l1"> <!-- Linha 1 -->
+            <td id="c10" onclick="jogar(this)"> <!-- coluna 1,0 -->
+                &nbsp;
+            </td>
+            <td id="c11" onclick="jogar(this)"> <!-- coluna 1,1 -->
+                &nbsp;
+            </td>
+            <td id="c12" onclick="jogar(this)"> <!-- coluna 1,2 -->
+                &nbsp;
+            </td>
+        </tr>
+        <tr id="l2"> <!-- Linha 2 -->
+            <td id="c20" onclick="jogar(this)"> <!-- coluna 2,0 -->
+                &nbsp;
+            </td>
+            <td id="c21" onclick="jogar(this)"> <!-- coluna 2,1 -->
+                &nbsp;
+            </td>
+            <td id="c22" onclick="jogar(this)"> <!-- coluna 2,2 -->
+                &nbsp;
+            </td>
+        </tr>
+    </table>
+    <h2 id="msg"></h2>
+    <div>    
+        <input  type="button" class="button"  value="Jogar novamente" id="novojogo" onclick="reinicia();">
+    </div>
+</body>
+</html>

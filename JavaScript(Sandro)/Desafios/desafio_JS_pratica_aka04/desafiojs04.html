@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafiojs04</title>
+    <script lang="JavaScript">
+        document.write("<hr>A)<br>");//A) Solicitar um numero e exibir sua tabuada de 0 à 10
+        var numA
+        numA = window.prompt("Insira um valor A:");
+        if (isNaN(numA))
+        {
+            document.write("ERRO");
+        }
+        else
+        {
+            document.write("<ol>");
+            for (let x = 1;x <= 10; x++)
+            {
+            document.write("<li>"+(numA * x)+"</li>");
+            }
+            document.write("</ol>");
+        }
+
+        document.write("<hr>B)<br>");//B) Solicitar 2 numeros e fazer a tabuada do 1° numero ate o 2° numero
+        var numB1
+        var numB2
+        numB1 = window.prompt("Insira um valor B:");
+        numB2 = window.prompt("Insira um segundo valor B:");
+        if (isNaN(numB1) || isNaN(numB2))
+        {
+            document.write("ERRO");
+        }
+        else
+        {
+            document.write("<ol>");
+            for (let x = 1;x <= numB2; x++)
+            {
+            document.write("<li>"+(numB1 * x)+"</li>");
+            }
+            document.write("</ol>");
+        }
+
+        document.write("<hr>C)<br>");//C) Solicitar um numero e calcular o fatorial
+        var numC
+        var resultC=1
+        numC = window.prompt("Informe um valor C:");
+        if (isNaN(numC))
+        {
+            document.write("ERRO");
+        }
+        else
+        {
+            for (let x = numC;x >= 1; x--)
+            {
+               resultC *= x;
+            }
+            document.write("Fatorial de "+numC+" é "+resultC);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

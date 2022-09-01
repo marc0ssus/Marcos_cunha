@@ -1,0 +1,29 @@
+body
+{
+    background-color: cornflowerblue;
+}
+
+h1
+{
+    color: darkkhaki;
+    text-align: center;
+}
+
+div
+{
+    text-align: center;
+    color: rgba(248, 248, 255, 0.89);
+}
+
+input.button
+{
+    width: 80px;
+    height: 40px;
+    padding: 5px auto;
+    border: 1px solid gray;
+    color: white;
+    background-color: darkgoldenrod;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos</title>
+    <script lang="JavaScript">
+        function show(msg, cor) 
+        {
+            janela = window.open("","_blank", "width=400, height=200");
+            janela.document.write("<h2> style='color:"+cor+"';>"+msm+"</h2>");
+            janela.document.write("<input type='button' value='ok' onClick='window.close()'>");
+        }
+    </script>
+</head>
+<body onload="show('Página terminou de carregar')" onunload="comfirm('sair ?')">
+    <h2>Apresentação</h2>
+    <p>
+        Essa página tem por próposito mostra a execuçaõ de eventos
+    </p>
+    <br>
+    Seu Nome: <input type="text" name="Nome" id="inome" value="" onchange="show('Olá'+inome.value,'#00FF00')">
+    <br>
+    Sua Idade <input type="text" name="Idade" id="iidade" value="" onblur="show(inome.value+'Você saiu da idade idependente de alterar o conteúdo','#33FF66')">">
+    <br>
+</body>
+</html>

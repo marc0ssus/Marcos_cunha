@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS06</title>
+    <script lang="JavaScript">
+        function Pintar ()
+        {
+            var r = parseInt(document.getElementById("r").value);
+            var g = parseInt(document.getElementById("g").value);            
+            var b = parseInt(document.getElementById("b").value);            
+
+            if(r>255 || r<0)
+            {
+                document.write("Erro")
+            }
+                else if(g>255 || g<0)
+                {
+                    document.write("Erro")
+                }
+                    else if(b>255 || b<0)
+                    {
+                        document.write("Erro")
+                    } 
+                        else
+                        {
+                            document.getElementById("div").style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+                        }
+            }
+    </script>
+</head>
+<body>
+    R:<input type="number" id="r" max="255" min="0"><br>
+    G:<input type="number" id="g" max="255" min="0"><br>
+    B:<input type="number" id="b" max="255" min="0"><br>
+    <input type="button" value="Pintar" onclick="Pintar()">
+    <br><br>
+    <div id="div" style="width: 100px;height: 100px; background-color: transparent; border-radius: 50%;"></div>
+</body>
+</html>

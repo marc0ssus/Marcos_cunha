@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafiojs05</title>
+    <script lang="JavaScript">
+        var meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+        var x;
+        var repet = 1;
+
+        while (repet == 1)
+        {
+            x = window.prompt("Informe um número de 1 a 12:");
+            if (x == 0)
+            {
+                repet = 0;
+                alert("Encerrado programa...");
+                document.write("F5 para retornar...");
+            }
+            else if (isNaN(x) || x < 0 || x > 12)
+            {
+                alert("ERRO");
+            }
+            else
+            {
+                alert("Mês : "+meses[x-1]);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

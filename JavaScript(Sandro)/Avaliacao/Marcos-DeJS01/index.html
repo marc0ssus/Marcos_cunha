@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script lang="JavaScript">
+        var today = new Date();
+        var hour = String(today.getHours());
+        var min = String(today.getMinutes());
+        var day = String(today.getDate());
+        var mounth = String(today.getMonth() + 1);
+        var year = today.getFullYear();
+
+        today = day + '/' + mounth + '/' + year;
+        var time = hour + ':' + min;
+
+        document.write("<h1>", "|", today, "|", "</h1>");
+        document.write("<h2>", time, "</h2>")
+    </script>
+    <title>JS01</title>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <form action="resultado_lab6.php" method="post">
+                    Código
+                    <br>
+                    <input type="number" name="codigo">
+                    <br>
+                    Nome
+                    <br>
+                    <input type="text" name="nome">
+                    <br>
+                    Estado em que Reside
+                    <br>
+                    <select name="estado">
+                        <option value="SC">Santa Catarina</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="SP">São Paulo</option>
+                    </select>
+                    <br>
+                    Cidade em que Reside
+                    <br>
+                    <input type="text" name="cidade">
+                    <fieldset>
+                        <legend>Sexo</legend>
+                        Masculino<input type="radio" name="sex">
+                        Feminino<input type="radio" name="sex">
+                    </fieldset>
+                    <br><br>
+                    <input type="reset" value="Limpar">
+                    <br><br>
+                    <input type="submit" value="Enviar">
+                </form>
+            </td>
+        </tr>
+    </table>
+    <a href="listagem_lab6.html">Listagem</a>
+</body>
+</html>

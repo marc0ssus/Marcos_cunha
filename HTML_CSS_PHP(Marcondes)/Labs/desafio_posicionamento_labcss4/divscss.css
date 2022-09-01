@@ -1,0 +1,56 @@
+#div1 {
+    position: fixed;
+    background: red;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+#div2 {
+    position: fixed;
+    background: green;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+#div3 {
+    position: fixed;
+    background: blue;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+#div4 {
+    position: fixed;
+    background: grey;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+#div5 {
+    position: fixed;
+    background: gold;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    transform: translate(-50%, -50%); 
+}

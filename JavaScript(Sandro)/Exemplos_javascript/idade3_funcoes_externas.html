@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo teste idade</title>
+    <!--Chama funções.js-->
+    <script language="JavaScript" src="funcoes.js"></script>
+
+    <!--Chama script exclusivo desse projeto-->
+    <script language="JavaScript">
+        function mostra(nome, idade, sexo) {
+            window.alert((nome+" você é "+fMaiorIdade(idade)+" de idade e é "+fSexoExtenso(sexo)));
+        }
+    </script>
+</head>
+<body>
+    <h1>Exemplo idade com funções</h1>
+    <p style="font-family:'Courier New', Courier, monospace">
+    Nome......: <input id="iNome" type="text" value=""><br>
+    Idade.....: <input id="iIdade" type="text" value=""><br>
+    Sexo (m/f): <input id="iSexo" type="text" value="informe m/f"><br>
+    <input type="button" value="Mostrar" onclick="mostra(iNome.value,iIdade.value,iSexo.value)">
+    </p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+p.primeiro{
+    color: rgb(138, 3, 3);
+    font-size: 40px;
+    text-align: left;
+}
+p.segundo{
+    color: rgb(38, 196, 196);
+    font-size: 40px;
+    text-align: center;
+}
+p.terceiro{
+    color: rgb(35, 219, 44);
+    font-size: 40px;
+    text-align: right;
+}
+h1, h2, h3 {
+    color: rgb(138, 3, 3);
+}
+table.tabela tr td a {
+    color: rgb(138, 3, 3);
+}

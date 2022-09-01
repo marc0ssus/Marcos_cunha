@@ -1,0 +1,61 @@
+div#site
+{
+    position: absolute;
+    width: 1000px;
+    height: 100%;
+    left: 50%;
+    margin-left: -450px;
+}
+
+div#site div.topo
+{
+    width: 1000px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: rgb(169,3,41);
+    background: -moz-linear-gradient(top, rgb(169,3,41) 0%, rgb(143,2,34) 44%, rgb(109,0,25) 100%);
+    background: -webkit-linear-gradient(top, rgb(169,3,41) 0%,rgb(143,2,34) 44%,rgb(109,0,25) 100%);
+    background: linear-gradient(to bottom, rgb(169,3,41) 0%,rgb(143,2,34) 44%,rgb(109,0,25) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 );
+}
+
+div#site div.menu
+{
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 100%;
+    background: rgb(84,64,238);
+    background: -moz-linear-gradient(top,  rgba(84,64,238,1) 0%, rgba(84,64,238,1) 100%);
+    background: -webkit-linear-gradient(top,  rgba(84,64,238,1) 0%,rgba(84,64,238,1) 100%);
+    background: linear-gradient(to bottom,  rgba(84,64,238,1) 0%,rgba(84,64,238,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5440ee', endColorstr='#5440ee',GradientType=0 );
+}
+div#site div.conteudo
+{
+    position: relative;
+    float: right;
+    width: 800px;
+    height: 100%;
+    background: #1e5799;
+    background: -moz-linear-gradient(top,  #1e5799 0%, #2989d8 48%, #207cca 55%, #7db9e8 100%); 
+    background: -webkit-linear-gradient(top,  #1e5799 0%,#2989d8 48%,#207cca 55%,#7db9e8 100%);
+    background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 48%,#207cca 55%,#7db9e8 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
+}
+div#site div.rodape
+{
+    background-color: rgb(131, 204, 82);
+    width: 1000px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    float: left;
+    background: rgb(30,80,51);
+    background: -moz-linear-gradient(top,  rgba(30,80,51,1) 0%, rgba(30,80,51,1) 100%);
+    background: -webkit-linear-gradient(top,  rgba(30,80,51,1) 0%,rgba(30,80,51,1) 100%);
+    background: linear-gradient(to bottom,  rgba(30,80,51,1) 0%,rgba(30,80,51,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5033', endColorstr='#1e5033',GradientType=0 );
+}

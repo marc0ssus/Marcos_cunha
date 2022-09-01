@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script lang="JavaScript">
+        document.write("Exemplos de Conceitos em JavaScript");
+        document.write("Os comentários são // Uma Linha e /* ...Várias linha... */");
+        //Essa linha esta comentada
+        /* 
+        Esse   
+        texto
+        esta
+        todo
+        comentado
+        */
+        document.write("As mensagens serão ignoradas <br><br>");
+
+        var nome= "";
+        nome = window.prompt("Qual seu nome?");
+        document.write("Olá "+nome+ " tenha um bom dia :D<br>");
+        var num = 12;
+        document.write("O valor "+num+" ao quadrado é: ");
+        let result = num * num; 
+        document.write(result+ " <br>");
+        var verdadeiro = true;
+        document.write("O valor da variavel ´verdadeiro´ é: <br>");
+        document.write(verdadeiro);
+        verdadeiro = ! verdadeiro;
+        document.write(verdadeiro);
+        document.write("<br>")
+        
+        var idade = window.prompt("Qual sua idade?");
+        let categoria;
+        if (idade < 18) {
+            categoria = "Menor";
+        }
+        else {
+            categoria = "Maior";
+        }
+        document.write(nome+" você é "+categoria+" de idade");
+        var sexo = window.prompt("Informe o sexo (m/f)?");
+        nomesexo = (sexo == "M" || sexo == "m"?"homem":"mulher");
+        document.write("<br>");
+        document.write(nome+" é "+sexo)
+</script>
+</head>
+<body>
+    
+</body>
+</html>

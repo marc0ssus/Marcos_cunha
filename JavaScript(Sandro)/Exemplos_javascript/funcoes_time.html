@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo_time.css">
+    <script lang="JavaScript" src="funcoes_time.js">
+
+    </script>
+    <title>exemplo SetInterval e SetTimeOut</title>
+</head>
+<body onload="fStart()">
+    <h1>Exemplos SetInterval e SetTimeOut</h1>
+    <div>
+        Data: <span id="vData"></span>&nbsp;
+        Hora: <span id="vHora"></span>
+    </div>
+    <br>
+    <div>
+        <input type="button" value="Iniciar" class="button" onclick="fMostraHora(vHora)" id="acao">
+    </div>
+    <br><br>
+    <h1>Dado</h1>
+    <div>
+        <input type="button" value="Jogar Dado" class="button-dado" onclick="vDado.innerHTML = fJogarDado()" id="Dado">
+        <span id="vDado"></span>
+    </div>
+</body>
+</html>

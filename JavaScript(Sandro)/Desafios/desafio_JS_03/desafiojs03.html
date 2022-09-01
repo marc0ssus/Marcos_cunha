@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafiojs03</title>
+    <script lang="JavaScript">
+        var num
+        num = window.prompt("Insira um valor X:");
+        if (isNaN(num))
+        {
+            document.write("ERRO");
+        }
+        else
+        {
+            if (num < 0)
+            {
+                document.write(num+" é negativo!<br>");
+            }
+            else
+            {
+                document.write(num+" é positivo!<br>");
+                if (num <= 9)
+                {
+                    document.write(num+" é uma unidade!<br>");
+                }
+                else if (num >= 10 && num <= 99)
+                {
+                    document.write(num+" é dezena!<br>");
+                }
+                else if (num >=100 && num <= 999)
+                {
+                    document.write(num+" é centena!<br>");
+                }
+                else if (num >=1000 && num <999999)
+                {
+                    document.write(num+" é milhar!<br>");
+                    if (num < 10000)
+                    {
+                        document.write("A diferença para baixo do valor com 10.000 é "+(10000-num))
+                    }
+                    if (num > 10000)
+                    {
+                        document.write("A diferença para cima do valor com 10.000 é "+(num-10000))
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+</html>

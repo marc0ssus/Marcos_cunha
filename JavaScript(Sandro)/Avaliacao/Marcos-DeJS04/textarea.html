@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS04</title>
+    <script lang="JavaScript">
+        function countChar ()
+        {
+            var area = document.getElementById("area");
+            var counter = document.getElementById("counter");
+            var len = area.value.length;
+            counter.textContent = "|"+len+"|";
+        }
+    </script>
+</head>
+<body>
+    <textarea name="area" id="area" cols="60" rows="20" onkeyup="countChar()"></textarea>
+    <br>
+    <span id="counter">|0|</span>
+</body>
+</html>

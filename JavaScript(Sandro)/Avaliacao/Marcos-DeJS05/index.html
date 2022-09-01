@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS05</title>
+    <script lang="JavaScipt">
+        var sigla = ["SC", "RJ", "SP", "MG"];
+        var states = ["Santa Catarina", "Rio de Janeiro", "São Paulo", "Minas Gerais"];
+
+        function Search()
+        {
+            var input = document.getElementById("sigla").value;
+
+            for (i = 0; i < states.length; i++)
+            {
+                if (input.toUpperCase() == sigla[i])
+                {
+                    document.write(states[i])
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="sigla">
+    <br><br>
+    <input type="button" value="Search" id="search" onclick="Search()">
+</body>
+</html>
