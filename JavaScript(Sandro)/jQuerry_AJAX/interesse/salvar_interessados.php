@@ -1,5 +1,5 @@
 <?php
-include_once('lib/conexao.php');
+    include_once('lib/conexao.php');
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +8,7 @@ include_once('lib/conexao.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
 </head>
 <body>
     
@@ -40,12 +40,12 @@ function fValida($valores) {
    return $valido;
 }
 
-if (isset($_POST['bGravar'])) {
-    $valores = array("email"  => $_POST['iEmail'],
-                     "nome"   => $_POST['iNome'],
-                     "fone"   => $_POST['iFone'],
-                     "estado" => $_POST['sEstado'],
-                     "cidade" => $_POST['sCidade']);
+if (isset($_POST['Gravar'])) {
+    $valores = array("email"  => $_POST['Email'],
+                     "nome"   => $_POST['Nome'],
+                     "fone"   => $_POST['Fone'],
+                     "estado" => $_POST['Estado'],
+                     "cidade" => $_POST['Cidade']);
     if (fValida($valores)) {
         try {
             $sql = "INSERT into interessados(email,nome,fone,estado,cidade) 
