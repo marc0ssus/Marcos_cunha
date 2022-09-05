@@ -1,0 +1,2 @@
+# contrato
+# exemplo AJAX contrato
