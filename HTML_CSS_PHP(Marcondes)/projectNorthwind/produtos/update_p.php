@@ -45,6 +45,7 @@
     $produto ->execute(array("IDProduto" => $_GET['codigo']));
 
     $linha = $produto ->fetch();
+
 ?>
 <table class="table table-striped table-bordered">
     <tr>
