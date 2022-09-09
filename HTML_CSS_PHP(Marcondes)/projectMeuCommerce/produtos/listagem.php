@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT * from produtos where categoria_id = {$_GET["categoria"]}";
+$sql = "SELECT * from produtos where categoria_id = {$_GET['categoria']}";
 $consulta = $conn->prepare($sql);
 $resultado = $consulta->execute();
 ?>

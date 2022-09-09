@@ -14,3 +14,7 @@ form input {
 input.altera {
     background-color: white;
 }
+
+a {
+    text-decoration: none;
+}

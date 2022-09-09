@@ -1,11 +1,8 @@
 <?php
-//Carrega a Conexão com Bando de Dados
 include_once('lib/conexao.php');
 
-//Função option_estados - Carrega os estados do Banco de Dados e monta os options
-function option_estados() {
-    $conn = $GLOBALS['conn'];
-    //Selecionar os estados do Banco de Dados        
+function select_estados() {
+    $conn = $GLOBALS['conn'];     
     $sql = "SELECT Uf, Nome FROM estado";
     $consulta = $conn->prepare($sql);
     $estados = $consulta->execute();
@@ -21,46 +18,51 @@ function option_estados() {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lib/estilo.css">
-    <title>Cadastro de Interessados - NewsLetter - DEVs-TI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="lib/style.css">
+    <title>Cadastro de Interessados</title>
 </head>
-<body>
+<body class="container">
     <h1>INTERESSADOS - NewsLetter - DEVs-TI</h1>
-    <div>
+    <div class="btn btn-light">
         <a href="index.php">Listar</a>
     </div>     
     <br>
-    <h2 id="cadastro">Cadastro</h2>
-    <br>
-    <div id="dMsg"></div> <!-- Área para Mensagens de Validação -->
+    <h2 id="cadastro"></h2>
+    <div id="dMsg"></div>
     <br>
     <form id="fInteressados" action="salvar_interessados.php" method="post">
-        <label for="iNome">Nome:</label>
-        <input id="iNome" name="iNome" type="input" value="">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nome:</span>
+            <input type="text" class="form-control" placeholder="Nome" aria-label="Username" aria-describedby="basic-addon1" id="iNome" name="iNome" value="">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">E-mail:</span>
+            <input type="text" class="form-control" placeholder="e.mail@email.com" aria-label="Username" aria-describedby="basic-addon1" id="iEmail" name="iEmail" value="">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Telefone:</span>
+            <input type="text" class="form-control" placeholder="(99) 99999-9999" aria-label="Username" aria-describedby="basic-addon1" id="iFone" name="iFone" value="">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Estado:</span>
+            <select class="form-select" aria-label="Default select example" id="sEstado" name="sEstado">
+                <option value="00" selected>Selecionar</option>
+                <?php select_estados(); ?>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Cidade:</span>
+            <select class="form-select" aria-label="Default select example" id="sCidade" name="sCidade">
+                <option value="00">Selecionar</option>
+            </select>
+        </div>
         <br>
-        <label for="iEmail">e-mail:</label>
-        <input id="iEmail" name="iEmail" type="input" value="">
-        <br>
-        <label for="iFone">fone:</label>
-        <input id="iFone" name="iFone" type="input" value="" placeholder="(99) 99999-9999">
-        <br>
-        <label for="sEstado">Estado:</label>
-        <select id="sEstado" name="sEstado"> <!--Esse será alterado-->
-            <option value="00">Selecionar</option>
-            <?php option_estados(); ?>
-        </select>
-        <br>
-        <label for="sCidade">Cidade:</label>
-        <select id="sCidade" name="sCidade"> <!--Esse será alterado-->
-            <option value="00">Selecionar</option>
-        </select>
-        <br><br>
-        <input id="bLimpar" type="reset" value="Limpar">&nbsp;|&nbsp;
-        <input id="bSalvar" name="bGravar" type="submit" value="Gravar">
+        <button id="bSalvar" name="bGravar" type="submit" class="btn btn-primary">Salvar</button>
+        <button id="bLimpar" type="reset" class="btn btn-warning">Limpar</button>
     </form>
 </body>
-<!-- Chamada Biblioteca JS do JQuery -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- Chamada Biblioteca JS da Aplicação -->
 <script language="JavaScript" src="lib/funcoes.js"></script>
 </html>

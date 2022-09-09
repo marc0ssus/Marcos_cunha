@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Ago-2022 às 19:51
+-- Tempo de geração: 09-Set-2022 às 20:37
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -87,7 +87,8 @@ CREATE TABLE `interessados` (
 --
 
 INSERT INTO `interessados` (`email`, `nome`, `fone`, `estado`, `cidade`) VALUES
-('sandro@arealocal.com.br', 'Sandro Alencar', '(47) 99968-9513', 'sc', 1212112);
+('fdsfa@ghrfghs.com', 'dfadf', '(47) 98901-4639', 'AP', 1600709),
+('macaco@gmail.com', 'macaco', '(47) 98901-4694', 'AM', 1300904);
 
 -- --------------------------------------------------------
 

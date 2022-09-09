@@ -1,28 +1,28 @@
 <?php
-//Carrega a Conexão com Bando de Dados
 include_once('lib/conexao.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Salvar interessados</title>
 </head>
-<body>
-<h1>Cadastro de Interessados News Letter</h1>
+<body class="container">
+    <h1>Salvar Interessados News Letter</h1>
 <?php
 
-//Validação dos dados recebidos para grava
-function fValida($valores) {
+function Valida($valores) {
     $msg = "";
     $valido = true;
     if (empty($valores['nome'])) {
         $msg = "Nome Inválido";
         $valido = false;
     } elseif (!filter_var($valores['email'], FILTER_VALIDATE_EMAIL)) {
-        $msg = "e-mail Inválido";
+        $msg = "E-mail Inválido";
         $valido = false;
     } elseif (!preg_match("/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/",$valores['fone'])) {
         $msg = "Fone Inválido";
@@ -38,27 +38,21 @@ function fValida($valores) {
    return $valido;
 }
 
-//Gravação no Bando de Dados
-//Verifica se o botão Gravar foi clicado.
 if (isset($_POST['bGravar'])) {
     $valores = array("email"  => $_POST['iEmail'],
                      "nome"   => $_POST['iNome'],
                      "fone"   => $_POST['iFone'],
                      "estado" => $_POST['sEstado'],
                      "cidade" => $_POST['sCidade']);
-    //echo "valido: ".fValida($valores);
-    //Fazer a Validação dos Campos no PHP
-    if (fValida($valores)) {
+                    
+    if (Valida($valores)) {
         try {
             $sql = "INSERT into interessados(email,nome,fone,estado,cidade) 
                     values (:email,:nome,:fone,:estado,:cidade)";
             $consulta = $conn->prepare($sql);
-            //echo $sql;
-
-            //Tratar exceção de erro "Duplicação de Cadastro"
             $consulta->execute($valores);
-            echo "<h2>Dados Salvos</h2>";
-            echo "e-mail: ".$valores['email']."<br>";
+            echo "<br><h2>Dados Salvos!!!</h2><br>";
+            echo "E-mail: ".$valores['email']."<br>";
             echo "Nome: ".$valores['nome']."<br>";
             echo "Fone: ".$valores['fone']."<br>";
        } catch(PDOException $e) {
@@ -68,14 +62,8 @@ if (isset($_POST['bGravar'])) {
 }
 ?>
 <br>
-<!-- Volta a página de cadastro -->
-<input type="button" value="voltar" onclick="JavaScript:location.assign('index.php');window.clearTimeout();">
+<button type="button" onclick="JavaScript:location.assign('index.php');window.clearTimeout();" class="btn btn-primary">Voltar</button>
 </body>
-<script language="JavaScript">
-    setTimeout(() => {
-        location.assign("/interessados");        
-    }, 5000);
-</script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </html>
 

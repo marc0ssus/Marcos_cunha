@@ -1,11 +1,8 @@
 <?php
-//Carrega a Conexão com Bando de Dados
 include_once('lib/conexao.php');
 
-//Função Lista Interessados - Busca dados da tabela de Interessados no Bando de Dados
-function lista_interessados() {
-    $conn = $GLOBALS['conn'];
-    //Selecionar os interessados do Banco de Dados        
+function Lista_interessados() {
+    $conn = $GLOBALS['conn'];        
     $sql = "SELECT nome,email,fone FROM interessados order by nome";
     $consulta = $conn->prepare($sql);
     try {
@@ -19,9 +16,9 @@ function lista_interessados() {
     $linha = "0";
     while($r = $consulta->fetch()) {
         echo "<tr id='l".$linha."'>";
-        echo "<td><input type='text' readonly id='n".$linha."' ondblclick='fAlterarValor(this,\"".$r["email"]."\")' value='".$r["nome"]."'></td>";
+        echo "<td><input type='text' readonly id='n".$linha."' ondblclick='Altera_valor(this,\"".$r["email"]."\")' value='".$r["nome"]."'></td>";
         echo "<td><input type='text' readonly id='e".$linha."' value='".$r["email"]."'></td>";
-        echo "<td><input type='text' readonly id='f".$linha."' ondblclick='fAlterarValor(this,\"".$r["email"]."\")' value='".$r["fone"]."'></td>";
+        echo "<td><input type='text' readonly id='f".$linha."' ondblclick='Altera_valor(this,\"".$r["email"]."\")' value='".$r["fone"]."'></td>";
         printf("<td><input type='button' value='D' onclick='fExcluirInteressado(\"%s\",%u)'></td>",$r["email"],$linha);
         echo "</tr>";
         $linha = $linha+1;
@@ -36,35 +33,33 @@ function lista_interessados() {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="lib/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="lib/style.css">
     <title>Interessandos</title>
 </head>
-<body>
+<body class="container">
 <h1>INTERESSADOS - NewsLetter - DEVs-TI</h1>
-    <div>
+    <div class="btn btn-light">
         <a href="cadastro_interessados.php">Cadastro</a>
     </div>     
-    <br>
+    <br><br>
     <?php
-         lista_interessados();
+         Lista_interessados();
     ?>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script language="JavaScript">
    
-   function fAlterarValor(valor,email) 
+   function Altera_valor(valor,email)
    {    
-      $("#"+valor.id).removeAttr("readonly"); //retira o somente leitura
-      $("#"+valor.id).attr("class","altera"); //muda o estilo
-      let campo = valor.id.slice(0,1); //seleciona a primeira letra do ID
+      $("#"+valor.id).removeAttr("readonly");
+      $("#"+valor.id).attr("class","altera");
+      let campo = valor.id.slice(0,1);
       
-      //criar um evento para quando for alterado um valor
       $("#"+valor.id).change( function() {
         let acao = "altera_valor.php?email="+email+"&valor="+$("#"+valor.id).val()+"&campo="+campo;
-        //console.log(acao);
-        //Ajax Alteração dado
         $.get(acao, function(dados, status) {
-        //alert(dados);
            if (status == "success") {
                $("#"+valor.id).attr("readonly");
                $("#"+valor.id).removeAttr("class");
@@ -72,23 +67,19 @@ function lista_interessados() {
         });  
       });
 
-      //Au sair do Input retorna as propriedades
       $("#"+valor.id).blur( function() { 
             $("#"+valor.id).attr("readonly");
             $("#"+valor.id).removeAttr("class");
         });
 
    }
-
    function fExcluirInteressado(email,l) {
     let acao = "excluir_interessado.php?email="+email;
-    //Ajax para excluir o Interessado
     $.get(acao, function(dados, status){
         if (status == "success") {
             $("#l"+l).remove();
         }
-    });  
-
-   }
+    });
+    }
 </script>   
 </html>
