@@ -21,7 +21,7 @@ include_once "lib/sql.php";
 
     <body>
         <div>
-            <?php include "menu.php"; ?>
+            <?php include "home.php"; ?>
             <div>
                 <?php
                 if (!isset($_GET["pagina"])) {

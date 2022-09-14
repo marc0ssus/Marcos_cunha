@@ -4,7 +4,7 @@ $consulta = $conn->prepare($sql);
 $resultado = $consulta->execute();
 ?>
 
-<section class="container flex">
+<div class="row"> 
     <?php foreach ($consulta as $linha) { ?>
     <div class="card" style="width: 18rem;">
         <img src="<?php echo $linha["imagem"]; ?>" class="card-img-top" alt="">
@@ -14,7 +14,8 @@ $resultado = $consulta->execute();
             <p class="card-text">
                 <td>R$ <?php echo $linha["valor"]; ?></td>
             </p>
-            <?php echo "<a href=\"?pagina=produto&codigo={$linha["id"]}\" class=\"btn btn-primary\">Ver página do produto</a>"; ?>
+            <?php echo "<a href=\"?codigo={$linha["id"]}\" class=\"btn btn-primary\">Ver página do produto</a>"; ?>
         </div>
         <?php } ?>
-</section>
+</div>
+    

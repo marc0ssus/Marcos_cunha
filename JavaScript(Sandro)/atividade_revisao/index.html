@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="functions.js"></script>
+    <title>revisao</title>
+</head>
+<body>
+    <form action="dados.php" method="post">
+        Nome:<input type="text" id="nome" name="nome">
+        <br>
+        Salário:<input type="text" id="salario" name="salario">
+        <br>
+        Endereço:<br><textarea id="endereco" name="endereco" cols="20" rows="5"></textarea>
+        <br>
+        <input type="submit" name="salvar" value="Enviar" onclick="verificaSalario()">
+    </form>
+</body>
+</html>
