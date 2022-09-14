@@ -29,5 +29,6 @@ if(isset($_POST['salvar']))
         echo "Nome: ".$valores['nome']."<br>";
         echo "Salário: ".$valores['salario']."<br>";
         echo "Endereço: ".$valores['endereco']."<br>";
+        echo "Salários mínimos aproximados: ".$valores['salario'] / 1212;
     }
 }
