@@ -8,17 +8,16 @@
     <title>revisao</title>
 </head>
 <body>
-    <div id="msg"></div>
-    <br>
-    <form action="dados.php" method="post">
+    <form>
         Nome:<input type="text" id="nome" name="nome">
         <br>
         Salário:<input type="text" id="salario" name="salario">
         <br>
         Endereço:<br><textarea id="endereco" name="endereco" cols="20" rows="5"></textarea>
         <br>
-        <input type="submit" id="salvar" name="salvar" value="Enviar" onclick="verificaSalario()">
+        <input type="button" id="verificar" name="verificar" value="Verificar" onclick="verificaSalario()">
     </form>
+    <p id="result" name="result"></p>
 </body>
 <script lang="JavaScript">
     function mostramsg (msg) 
@@ -29,13 +28,21 @@
         }, 3000);
     }
     
-    document.forms[0].addEventListener("submit", function(e) {
-    
+    document.getElementById("verificar").onclick = function(e) {
     if ((parseFloat(document.getElementById("salario").value) <= 0) || document.getElementById("salario").value === "") {
-        mostramsg("Salário deve ser informado e maior que zero!");
+        window.alert("Salário deve ser informado e maior que zero!");
         document.getElementById("salario").focus();
-        e.preventDefault();
+    } else {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "dados.php");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("nome="+document.getElementById("nome").value
+        +"&salario="+document.getElementById("salario").value
+        +"&endereco="+document.getElementById("endereco").value);
+        xhttp.onload = function() {
+            document.getElementById("result").innerHTML = this.responseText;
+        }
     }
-    });
+    };
 </script>
 </html>
