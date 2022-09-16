@@ -1,34 +1,28 @@
 <?php
-function Valida($valores) {
-    $msg = "";
-    $valido = true;
+   define("salariominimo",1212);
+   define("btnvoltar","<br><input type='button' onclick='history.go(-1)' value='Voltar'>");
+   $erro = false;
 
-    if (empty($valores['nome'])) {
-        $msg = "Nome Inválido";
-        $valido = false;
-    }elseif (empty($valores['salario'])) {
-        $msg = "Salário Inválido";
-        $valido = false;
-    }elseif (empty($valores['endereco'])) {
-        $msg = "Endereço Inválido";
-        $valido = false;
-    }
-    echo "<h3>".$msg."</h3>";
-   return $valido;
-};
+   function naoPreenchido($valor) {
+    if ($valor == "") {
+        return true;
+      } else {
+        return false;
+      }
+   }
+   
+   if (naoPreenchido($_POST["nome"])) {
+      echo "<p>Erro: Nome não informado</p>";
+      $erro = true;
+   }
+   
+   if (naoPreenchido($_POST["endereco"])) {
+      echo "<p>Erro: Endereço não informado</p>";
+      $erro = true;
+   }
 
-if(isset($_POST['salvar']))
-{
-    $valores = array("nome" => $_POST['nome'],
-                    "salario" => $_POST['salario'],
-                    "endereco" => $_POST['endereco']);
-
-    if(Valida($valores))
-    {
-        echo "<br><h2>Dados Salvos!!!</h2><br>";
-        echo "Nome: ".$valores['nome']."<br>";
-        echo "Salário: ".$valores['salario']."<br>";
-        echo "Endereço: ".$valores['endereco']."<br>";
-        echo "Salários mínimos aproximados: ".$valores['salario'] / 1212;
-    }
-}
+   if (!$erro) {
+      printf("<strong>%s</strong> Recebe o equivalente a <strong>%1.2f salários mínimos</strong>. <br>Mora no endereço <strong>%s</strong><br>",$_POST["nome"],($_POST["salario"] / salariominimo),$_POST["endereco"]);
+   }
+   echo btnvoltar;
+?>

@@ -4,20 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script lang="JavaScript">
-        function verificaSalario(){
-            salario = document.getElementById("salario").value;
-            if (salario > 0){
-                return true;
-            } else {
-                window.alert("Informar salário novamente");
-                return false;
-            }
-        }
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>revisao</title>
 </head>
 <body>
+    <div id="msg"></div>
+    <br>
     <form action="dados.php" method="post">
         Nome:<input type="text" id="nome" name="nome">
         <br>
@@ -25,7 +17,25 @@
         <br>
         Endereço:<br><textarea id="endereco" name="endereco" cols="20" rows="5"></textarea>
         <br>
-        <input type="submit" name="salvar" value="Enviar" onclick="verificaSalario()">
+        <input type="submit" id="salvar" name="salvar" value="Enviar" onclick="verificaSalario()">
     </form>
 </body>
+<script lang="JavaScript">
+    function mostramsg (msg) 
+    {
+        $("#msg").text(msg);
+        setTimeout(() => {
+            $("#msg").text("");
+        }, 3000);
+    }
+    
+    document.forms[0].addEventListener("submit", function(e) {
+    
+    if ((parseFloat(document.getElementById("salario").value) <= 0) || document.getElementById("salario").value === "") {
+        mostramsg("Salário deve ser informado e maior que zero!");
+        document.getElementById("salario").focus();
+        e.preventDefault();
+    }
+    });
+</script>
 </html>
