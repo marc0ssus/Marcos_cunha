@@ -32,6 +32,5 @@ if (empty($linha_categoria["categoria_pai"])) {
     <?php }
     ?>
 </div>
-
 <?php
 } ?>

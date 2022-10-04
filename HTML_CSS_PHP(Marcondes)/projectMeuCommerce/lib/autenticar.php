@@ -17,8 +17,6 @@ if (
       $_SESSION["autenticado"] = true;
       $_SESSION["usuario"] = $usuario;
     }
-  } else {
-    echo "Usuário encontrado";
   }
 }
 ?>

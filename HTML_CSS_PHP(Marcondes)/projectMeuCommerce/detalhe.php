@@ -21,7 +21,7 @@ $produto_detalhes = $produto->fetch();
         </p>
         <p class="card-text">
         <form method="post">
-            <input class="btn btn-primary" type="submit" name="adicionar_carrinho" value="Adicionar a sacola">
+            <input class="btn btn-primary" type="submit" name="adicionar_carrinho" value="Adicionar ao carrinho">
         </form>
         </p>
         <p class="card-text"><small class="text-muted"><?php echo $produto_detalhes[

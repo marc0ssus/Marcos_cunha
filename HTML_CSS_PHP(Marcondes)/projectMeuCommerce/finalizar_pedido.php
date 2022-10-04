@@ -1,6 +1,4 @@
-<h1>
-    Finalizar pedido.
-</h1>
+<h2>Finalizar pedido</h2>
 
 <?php if (isset($_POST["gravar_pedido"])) {
   $sql_insere_venda =

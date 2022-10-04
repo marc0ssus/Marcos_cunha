@@ -1,8 +1,6 @@
-<?php
-if (isset($_SESSION["carrinho"])) { ?>
-<form method="post">
-    <input class="btn btn-danger" type="submit" name="limpar_carrinho" value="Limpar carrinho">
-</form>
+<br>
+<?php if (isset($_SESSION["carrinho"])) { ?>
+<h3>Carrinho</h3>
 <hr>
 <table class="table table-striped">
     <thead>
@@ -10,13 +8,13 @@ if (isset($_SESSION["carrinho"])) { ?>
             <th scope="col">#</th>
             <th scope="col">Descricao</th>
             <th scope="col">Valor</th>
-            <th scope="col">Ações</th>
+            <th scope="col"></th>
         </tr>
     </thead>
     <tbody>
         <?php
-        $chaves = array_keys($_SESSION["carrinho"]);
-        foreach ($chaves as $item) {
+        $keys = array_keys($_SESSION["carrinho"]);
+        foreach ($keys as $item) {
 
           $sql_produto = "SELECT * from produtos where id = :id";
           $produto = $conn->prepare($sql_produto);
@@ -37,12 +35,21 @@ if (isset($_SESSION["carrinho"])) { ?>
         <?php
         }
         ?>
-
     </tbody>
 </table>
-
-<a class="btn btn-primary" href="?pagina=finalizar_pedido">Realizar pedido</a>
-
-
-<?php } else {echo "<h3>Nenhum produto adicinado a carrinho!";}
+<table>
+    <tr>
+        <td>
+            <a class="btn btn-primary" href="?pagina=finalizar_pedido">Realizar pedido</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post">
+                <input class="btn btn-danger" type="submit" name="limpar_carrinho" value="Limpar carrinho">
+            </form>
+        </td>
+    </tr>
+</table>
+<?php } else {echo "<h2>Carrinho vazio!</h2>";}
 ?>

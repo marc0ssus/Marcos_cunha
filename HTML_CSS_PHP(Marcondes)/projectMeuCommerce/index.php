@@ -8,7 +8,6 @@ session_start();
 if (isset($_GET["pagina"]) && $_GET["pagina"] == "logout") {
   session_destroy();
   session_start();
-  header("Location ?");
 }
 
 include_once "lib/conexao.php";

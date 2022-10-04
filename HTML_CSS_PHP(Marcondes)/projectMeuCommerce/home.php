@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <div class="">
+        <div>
             <div class="row">
                 <div class="col"></div>
             </div>
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-3">
+                <div class="col-2">
                     <?php include "menu_categorias.php"; ?>
                 </div>
                 <div class="col-9">

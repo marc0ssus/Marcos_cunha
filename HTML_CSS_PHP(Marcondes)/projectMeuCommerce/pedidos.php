@@ -1,4 +1,6 @@
-<h3>Meus Pedidos: <?php echo $_SESSION["usuario"]["login"]; ?></h3>
+<br>
+<h3>Pedidos: <?php echo $_SESSION["usuario"]["login"]; ?></h3>
+<br>
 
 <?php
 $sql_pedidos = "select * from vendas where usuario_id = :usuario_id";
@@ -51,6 +53,5 @@ while ($linha = $sql_pedidos->fetch()) {
 <br>
 <?php
 }
-
 
 ?>

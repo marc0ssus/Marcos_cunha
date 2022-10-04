@@ -7,17 +7,25 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li>
+                    <a class="btn btn-success" href="?pagina=carrinho">
+                        Carrinho
+                        <?php if (isset($_SESSION["carrinho"])) {
+                          echo "(" . count($_SESSION["carrinho"]) . ")";
+                        } ?>
+                    </a>
+                </li>
+                &ensp;
+                <li>
+                    <?php if (isset($_SESSION["autenticado"])) { ?>
+                    <a class="btn btn-info" href="?pagina=pedidos">Meus pedidos</a>
+                    <?php } ?>
+                </li>
+                &ensp;
+                <li>
+                    <a href="?pagina=logout" style="color: black;">Sair</a>
+                </li>
             </ul>
-            <a class="btn btn-success" href="?pagina=carrinho">
-                Carrinho
-
-                <?php if (isset($_SESSION["carrinho"])) {
-                  echo "(" . count($_SESSION["carrinho"]) . ")";
-                } ?>
-            </a>
-            <?php if (isset($_SESSION["autenticado"])) { ?>
-            <a class="btn btn-info" href="?pagina=pedidos">Meus pedidos</a>
-            <?php } ?>
         </div>
     </div>
 </nav>

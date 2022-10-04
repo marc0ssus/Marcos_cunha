@@ -9,14 +9,13 @@ $sql_prepara->execute();
         <a class="nav-link vertI active" aria-current="page">Categorias</a>
     </li>
     <?php while ($categoria = $sql_prepara->fetch()) {
-      if (!empty($categoria["categoria_pai"])) {
-        $identacao = "&nbsp;&nbsp;&nbsp;";
+      if (empty($categoria["categoria_pai"])) {
+        $identacao = "• &nbsp";
       } else {
         $identacao = "";
       }
-      echo "{$identacao}<a href=\"?pagina=produtos&categoria={$categoria["id"]}\" class=\"nav-link\">{$categoria["descricao"]}</a><br>";
+      echo "<li class=\"nav-item vert\"><a 
+            href=\"?pagina=produtos&categoria={$categoria["id"]}\" 
+            aria-current=\"page\" style=\"color: black;\" class=\"nav-link\">{$identacao}{$categoria["descricao"]}</a></li>";
     } ?>
 </ul>
-<!--echo "<li class=\"nav-item vert\">
-        <a class=\"nav-link vertI\" aria-current=\"page\" href=\"?categoria={$li["id"]}\">{$li["descricao"]}</a>
-        </li>"-->

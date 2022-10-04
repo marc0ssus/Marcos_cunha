@@ -1,5 +1,4 @@
 <?php
-//conexao
 $username = "root";
 $password = "";
 try {
@@ -8,7 +7,7 @@ try {
     $username,
     $password
   );
-  //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
   echo "ERROR: " . $e->getMessage();
 }
